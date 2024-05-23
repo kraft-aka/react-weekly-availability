@@ -1,0 +1,49 @@
+.week-container {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.horizontal-slider {
+  width: inherit;
+  max-width: 70%;
+  height: 50px;
+  border: none;
+  margin: 0 auto;
+}
+
+.horizontal-slider .example-track {
+  top: 20px;
+  height: 10px;
+}
+
+.example-track.example-track-1 {
+  background: #282663;
+}
+
+.example-track.example-track-2 {
+  background: #7e8098;
+}
+
+.example-track.example-track-3 {
+  background: #7e8098;
+}
+
+.horizontal-slider .example-thumb {
+  top: 1px;
+  width: 50px;
+  height: 48px;
+  line-height: 38px;
+}
+
+.example-thumb {
+  font-size: 0.9em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 5px solid gray;
+  box-sizing: border-box;
+}
