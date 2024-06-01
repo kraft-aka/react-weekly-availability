@@ -4,7 +4,8 @@ import ReactSlider from "react-slider";
 
 const WeekSlider = () => {
   const [toggleWeek, setToggleWeek] = useState(true);
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState([0,3]);
+  const [valueSecond, setValueSecond] = useState([4,6]);
 
   const handleToggleWeek = (e) => setToggleWeek(e.target.checked);
   return (
@@ -17,21 +18,39 @@ const WeekSlider = () => {
         />
       </form>
       {toggleWeek && (
+        <>
+
         <ReactSlider
           className="horizontal-slider"
           thumbClassName="example-thumb"
           trackClassName="example-track"
-          defaultValue={[0, 6]}
+          value={value}
           ariaLabel={["Leftmost thumb", "Middle thumb", 'Rightmost thumb']}
           ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
           renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
           pearling
           marks
           min={0}
-          max={6}
+          max={3}
           minDistance={1}
           onChange={(v) => setValue(v)}
-        />
+          />
+        <ReactSlider
+          className="horizontal-slider"
+          thumbClassName="example-thumb"
+          trackClassName="example-track"
+          value={valueSecond}
+          ariaLabel={["Leftmost thumb", "Middle thumb", 'Rightmost thumb']}
+          ariaValuetext={(state) => `Thumb value ${state.valueNow}`}
+          renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+          pearling
+          marks
+          min={4}
+          max={6}
+          minDistance={1}
+          onChange={(v) => setValueSecond(v)}
+          />
+          </>
       )}
       <br />
       {value}
